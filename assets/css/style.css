@@ -1,0 +1,273 @@
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+  background-color: #0e0e0e;
+  color: #fff;
+}
+
+/* ---------- HEADER ---------- */
+.site-header, .main-header, .header-bar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(15, 15, 15, 0.7);
+  backdrop-filter: blur(8px);
+  transition: 0.3s ease;
+  z-index: 1000;
+}
+
+.site-header.header-scrolled,
+.main-header.scrolled,
+.header-bar.scrolled {
+  background: #000000e6;
+}
+
+.header-inner, .nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+}
+
+.logo img, .brand img, .brand-logo img {
+  height: 60px;
+}
+
+.menu a, .nav-links a, .site-menu a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.menu a:hover, .nav-links a:hover, .site-menu a:hover {
+  color: #f03e3e;
+}
+
+.btn-discord, .discord-link, .discord-btn {
+  background: #5865f2;
+  padding: 8px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-discord:hover, .discord-link:hover, .discord-btn:hover {
+  background: #4752c4;
+}
+
+/* ---------- HAMBURGER / MOBILE ---------- */
+.toggle-menu, .hamburger, .mobile-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.toggle-menu span, .hamburger span, .mobile-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.toggle-menu.active span:nth-child(1),
+.hamburger.open span:nth-child(1),
+.mobile-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.toggle-menu.active span:nth-child(2),
+.hamburger.open span:nth-child(2),
+.mobile-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.toggle-menu.active span:nth-child(3),
+.hamburger.open span:nth-child(3),
+.mobile-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+.mobile-nav, .mobile-menu, .mobile-menu-panel {
+  display: none;
+  flex-direction: column;
+  background: #111;
+  position: absolute;
+  width: 100%;
+  top: 80px;
+  left: 0;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.mobile-nav.visible, .mobile-menu.show, .mobile-menu-panel.visible {
+  display: flex;
+}
+
+.mobile-nav a, .mobile-menu a, .mobile-menu-panel a {
+  color: #fff;
+  padding: 15px;
+  text-decoration: none;
+  border-bottom: 1px solid #222;
+}
+
+.mobile-nav a:hover, .mobile-menu a:hover, .mobile-menu-panel a:hover {
+  background: #f03e3e;
+}
+
+/* ---------- HERO / HERO SECTION ---------- */
+.hero-section, .page-hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url("../content/hero-bg.jpg") center/cover no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 5rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  color: #f03e3e;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-play, .cta-button {
+  background: #f03e3e;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-play:hover, .cta-button:hover {
+  background: #0088cc;
+}
+
+/* ---------- SECTIONS ---------- */
+.intro-section, .about, .features-section, .partners-section, .services {
+  padding: 100px 10%;
+  background: #0d0d0d;
+  text-align: center;
+}
+
+.intro-wrapper, .about-text, .about-content, .features-header, .partners-heading {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.intro-wrapper h2, .about h2, .features-header h2, .partners-heading h2 {
+  font-size: 2.5rem;
+  color: #f03e3e;
+}
+
+.accent-bar, .underline {
+  width: 60px;
+  height: 4px;
+  background: #f03e3e;
+  margin: 15px 0;
+}
+
+/* FEATURES GRID */
+.features-grid, .partners-grid, .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.feature-card, .partner-card, .box {
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 20px;
+  transition: 0.3s;
+}
+
+.feature-card:hover, .partner-card:hover, .box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(240, 62, 62, 0.3);
+}
+
+.feature-card img, .partner-card img, .box img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.feature-card h3, .partner-card h3, .box h3 {
+  color: #f03e3e;
+  margin: 10px 0;
+}
+
+/* ---------- FOOTER ---------- */
+.site-footer, .footer {
+  background: #000;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.site-footer p, .footer p {
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.site-footer .discord-icon, .footer .discord-icon {
+  color: #5865f2;
+  transition: 0.2s;
+}
+
+.site-footer .discord-icon:hover, .footer .discord-icon:hover {
+  color: #4752c4;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .menu, .nav-links, .site-menu { display: none; }
+  .toggle-menu, .hamburger, .mobile-toggle { display: flex; }
+  .intro-wrapper, .about-content { flex-direction: column; }
+}
+
+@media (max-width: 768px) {
+  .feature-card img, .partner-card img, .box img {
+    max-height: 150px;
+  }
+}

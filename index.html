@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ČeskoSlovenský FiveM roleplay server" />
+  <link rel="icon" href="assets/content/logo-big.png" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+  <title>Prism Roleplay - Domov</title>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <a href="index.html"><img src="assets/content/prismroleplay.png" alt="Prism RP Logo" data-aos="fade-down" /></a>
+      </div>
+
+      <nav class="menu" data-aos="fade-down" data-aos-delay="150">
+        <a href="index.html">Hlavní</a>
+        <a href="https://prismroleplay.gitbook.io/main/" target="_blank">Pravidla</a>
+        <a href="sponsors.html">Partneři</a>
+        <a href="https://pmrp.sellhub.cx/" target="_blank">Obchod</a>
+      </nav>
+
+      <a href="https://discord.gg/y6anSw3utr" target="_blank" class="btn-discord" data-aos="fade-down" data-aos-delay="300">
+        <i class="fab fa-discord"></i> Připojit se
+      </a>
+
+      <button class="toggle-menu" id="toggle-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="index.html">Hlavní</a>
+      <a href="https://prismroleplay.gitbook.io/" target="_blank">Pravidla</a>
+      <a href="sponsors.html">Partneři</a>
+      <a href="https://pmrp.sellhub.cx/" target="_blank">Obchod</a>
+      <a href="https://discord.gg/y6anSw3utr" target="_blank" class="btn-discord-mobile">
+        <i class="fab fa-discord"></i> Discord
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content" data-aos="zoom-in">
+      <h1>Prism Roleplay</h1>
+      <p>Chceš zažít něco nového a odlišného od ostatních serverů?</p>
+      <a href="https://cfx.re/join/zxo8k9" target="_blank" class="btn-play">Hraj Teď</a>
+    </div>
+  </section>
+
+  <!-- ABOUT US -->
+  <section class="intro-section">
+    <div class="intro-wrapper" data-aos="fade-right">
+      <h2>Kdo jsme</h2>
+      <div class="accent-bar"></div>
+      <p>
+        Prism Roleplay je československá komunitní platforma, kde si každý najde místo pro svůj příběh.  
+        Autentická atmosféra, propracované roleplay frakce a férová komunita dělají z našeho serveru unikátní zážitek.
+      </p>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features-section">
+    <div class="features-header" data-aos="fade-up">
+      <h2>Co nabízíme</h2>
+      <p>Naše serverové možnosti a frakce</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card" data-aos="fade-up">
+        <img src="assets/content/des-1.png" alt="LSPD/LSSD" />
+        <h3>LSPD / LSSD</h3>
+        <p>Zapoj se do policejní frakce a prožij napínavé mise.</p>
+      </div>
+      <div class="feature-card" data-aos="fade-up">
+        <img src="assets/content/des-1.png" alt="LSPD/LSSD" />
+        <h3>EMS</h3>
+        <p>Zapoj se do policejní frakce a prožij napínavé mise.</p>
+      </div>
+      <div class="feature-card" data-aos="fade-up">
+        <img src="assets/content/des-1.png" alt="LSPD/LSSD" />
+        <h3>Nelegal</h3>
+        <p>Zapoj se do policejní frakce a prožij napínavé mise.</p>
+      </div>
+      <!-- Přidej další feature karty -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© Prism RP – Všechna práva vyhrazena</p>
+    <a href="https://discord.gg/y6anSw3utr" target="_blank" class="discord-icon">
+      <i class="fab fa-discord"></i>
+    </a>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    AOS.init({ duration: 800 });
+
+    const siteHeader = document.getElementById('site-header');
+    const toggleBtn = document.getElementById('toggle-menu');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    window.addEventListener('scroll', () => {
+      siteHeader.classList.toggle('header-scrolled', window.scrollY > 50);
+    });
+
+    toggleBtn.addEventListener('click', () => {
+      toggleBtn.classList.toggle('active');
+      mobileNav.classList.toggle('visible');
+    });
+
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        toggleBtn.classList.remove('active');
+        mobileNav.classList.remove('visible');
+      });
+    });
+  </script>
+</body>
+</html>
